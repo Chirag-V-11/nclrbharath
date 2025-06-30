@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCLR - Excellence in Construction</title>
+    <meta name="description" content="NCLR Construction - Building landmarks that stand the test of time">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS */
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #f8a51b;
+            --dark: #333;
+            --light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to right,#122432,#11394a);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        
+        .header-scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #ffffff ;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 180px;
+            padding-bottom: 60px;
+        }
+        
+        .hero-content h1 {
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 30px;
+        }
+        
+        /* Services */
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgb(22, 51, 113);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Projects */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 56, 117, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+      
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--secondary);
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            /* background: var(--secondary); */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon:hover {
+            color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #bbb;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+        .hover\:text-custom-yellow:hover {
+        color: #fcb975;
+        }
+        .logo-section {
+            padding: 50px 0;
+            background: white;
+            overflow: hidden;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #11394a;
+            margin-bottom: 15px;
+        }
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 20px 0;
+        }
+        .logo-track {
+            display: flex;
+            gap: 60px;
+            animation: scroll 30s linear infinite;
+            will-change: transform;
+        }
+        .logo-item {
+            flex: 0 0 auto;
+            width: 150px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: blur(0);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .logo-item:hover {
+            filter: blur(0);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-150px * 10 - 60px * 10));
+            }
+        }
+        /* Reverse animation for second track */
+        .logo-track.reverse {
+            animation: scroll-reverse 30s linear infinite;
+        }
+        @keyframes scroll-reverse {
+            0% {
+                transform: translateX(calc(-150px * 10 - 60px * 10));
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo-item {
+                width: 120px;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .logo-track {
+                gap: 40px;
+            }
+        }
+        .hero-border{
+            border: 4px solid  #f3ae54;
+            border-radius: 4rem;
+            box-shadow: 0 4px 6px -1px rgba(255, 0, 0, 0.1), 0 2px 4px -1px rgba(255, 0, 0, 0.06);
+        }
+        .hero-content {
+            padding: 1.5rem;
+        }
+    </style>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 75%;
+            width: 75%;
+            overflow: hidden;
+            color: #000;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            animation: fade 1.5s;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+            background-color: #ddd;
+        }
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container img {
+            width: 100%; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 10px; /* Positioning from the bottom */
+            right: 10px; /* Positioning from the left */
+            color: rgb(0, 0, 0); /* Text color */
+            font-size: 3vw;
+            font-weight: bold;
+        }
+</style>
+<style>
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slide-out {
+            animation: slideOut 0.5s ease-in-out forwards;
+        }
+        @keyframes slideOut {
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        .slide-in {
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .hero-border {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        .hero-border::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background-color: #11394a;
+        }
+    </style>
+    <style>
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slide-out {
+            animation: slideOut 0.5s ease-in-out forwards;
+        }
+        @keyframes slideOut {
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        .slide-in {
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .hero-border {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        .hero-border::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background-color: #11394a;
+        }
+    </style>
+<style>
+        .container1 {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 500px;
+            position: relative;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        .section1 {
+            min-width: 100%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .section1 img {
+            width: 300px;
+            padding-left: 12px;
+        }
+        .section1 p {
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        .text1 {
+            text-align: justify;
+            font-size: 24px;
+            width: 900px;
+            line-height: 2;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <img src="images/logos.PNG" height="80px" width="200" style="margin-bottom: 10px;">
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#home" class="font-medium hover:text-custom-yellow transition">Home</a></li>
+                        <li><a href="#about" class="font-medium hover:text-custom-yellow transition">About Us</a></li>
+                        <li><a href="#services" class="font-medium hover:text-custom-yellow transition">Services</a></li>
+                        <li><a href="#sservices" class="font-medium hover:text-custom-yellow transition">Splecialized Services</a></li>
+                        <li><a href="#projects" class="font-medium hover:text-custom-yellow transition">Projects</a></li>
+                        <li><a href="contact.html" class="font-medium hover:text-custom-yellow transition">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col justify-center items-center">
+        <button id="close-menu" class="absolute top-6 right-6 text-3xl">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="text-center space-y-8">
+            <li><a href="#home" class="text-2xl font-medium hover:text-yellow-500 transition">Home</a></li>
+            <li><a href="#about" class="text-2xl font-medium hover:text-yellow-500 transition">About Us</a></li>
+            <li><a href="#services" class="text-2xl font-medium hover:text-yellow-500 transition">Services</a></li>
+            <li><a href="#sservices" class="text-2xl font-medium hover:text-yellow-500 transition">Splecialized Services</a></li>
+            <li><a href="#projects" class="text-2xl font-medium hover:text-yellow-500 transition">Projects</a></li>
+            <li><a href="contact.html" class="text-2xl font-medium hover:text-yellow-500 transition">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:justify-between items-center gap-8 hero-border">
+                <div class="hero-content mb-4 md:mb-0" style="font-family: 'Cinzel', serif;color:#11394a">
+                    <h1 class="font-bold" style="font-size: 3.5rem;">NCLR</h1>
+                    <h1 class="mb-2 font-bold" style="font-size: 2.0rem;">Bharath Hi-Tecch Infrastructure Pvt Ltd</h1>
+                    <h1 class="mb-2 font-bold" style="font-size: 1.5rem;">Powering Growth</h1>
+                </div>
+                <div class="hero-content" style="color:#11394a">
+                    <img src="images/Chetan.png">
+                    <p> Mr. Chetan Prakash Tayal</p>
+                    <p>Founder & Managing Director</p>
+                    <p>Bharath Hi-Tecch Infrastructure Pvt Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-100" id="about">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" style="color: #f3ae54; font-family: 'Cinzel', serif;">About NCLR</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="https://static.wixstatic.com/media/f1b6bd_18aa504f8ea0446ea39fa7170db67197~mv2.jpg/v1/fill/w_702,h_376,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f1b6bd_18aa504f8ea0446ea39fa7170db67197~mv2.jpg" 
+                             alt="Construction Site" 
+                             class="rounded-lg shadow-xl">
+                        <div class="overlay-text">Citrus Zen Garden</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://static.wixstatic.com/media/f1b6bd_aae12f6c5f574b38ae8cb1e62f589a04~mv2.jpg/v1/fill/w_702,h_376,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f1b6bd_aae12f6c5f574b38ae8cb1e62f589a04~mv2.jpg" 
+                             alt="Building Construction" 
+                             class="rounded-lg shadow-xl">
+                        <div class="overlay-text">Kolte Patil Mirabilis</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://static.wixstatic.com/media/f1b6bd_1a61d228333a464cb8585f07bfb0167c~mv2.png/v1/fill/w_702,h_376,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f1b6bd_1a61d228333a464cb8585f07bfb0167c~mv2.png" 
+                             alt="Construction Workers" 
+                             class="rounded-lg shadow-xl">
+                        <div class="overlay-text">Millenium World School</div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-6">Who We Are</h3>
+                    <p class="mb-6">
+                        Bharath Hi-Tecch Infrastructure Pvt Ltd Projects is an Integrated Infrastructure Company headquartered in Bangalore, India. The Promoters of NCLR have got vast experience in executing Infrastructure works in Bangalore and managing the Facility including Civil, PHE, Interiors M & E works, etc.
+                    </p>
+                    <p class="mb-8">
+                        Established in 2016 under License No. ICL116941B NG.                    </p>
+                    <div class="grid">
+                            <h4 class="font-bold text-lg mb-2">Vission</h4>
+                            <p>We at NCLR are committed to provide Quality construction and services to meet customer’s need fully.</p>
+                    </div>
+                    <div class="grid mt-3" style="justify-content: center;">
+                        <img src="images/p.png" style="background-color:#11394a;border-radius: 9px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 mt-9">
+            <div class="text-center mb-16 mt-5">
+                <h2 class="text-4xl font-bold mb-2" style="color: #f3ae54; font-family: 'Cinzel', serif;">Management Team</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="container1" style="border: 4px solid  #f3ae54;border-radius: 4rem;">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- All your .section1 slides go here -->
+                    <div class="section1">
+                        <div style="text-align:center;">
+                            <img src="images/Chetan.png" alt="Chetan Prakash Tayal"/>
+                            <p>Mr. Chetan Prakash Tayal</p>
+                            <p>Founder & Managing Director</p>
+                        </div>
+                        <div class="text1">
+                            <p>The group is spearheaded by Mr. Chetan Prakash Tayal, a veteran in the field of real estate development and construction with over 3 decades of rich experience. He started his entrepreneur career by setting up a manufacturing unit involved in manufacturing of empty medical capsules and later on diversified into real estate, finance, infrastructure, energy, logistics, pharma and mining sectors reaching beyond the leap and bounds.<br>
+                            Mr. Tayal has been recognized as unparalleled excellence in the industry and helped Bharath Brand grow from Large to Larger in terms of business growth and achieving milestones one after another. During his career, Mr. Tayal has been instrumental in completing many residential & commercial projects, apart from acquiring over 1000 Acres of land to promote the real estate business.<br></p>
+                        </div>
+                    </div>
+                    <div class="section1">
+                        <div style="text-align:center;">
+                            <img src="images/dc.png" alt="Chetan Prakash Tayal"/>
+                            <p>G N Shivamurthy I.A.S(Retd.)</p>
+                            <p>Executive Directors</p>
+                        </div>
+                        <div class="text1">
+                            <p>The group is spearheaded by Mr. Chetan Prakash Tayal, a veteran in the field of real estate development and construction with over 3 decades of rich experience. He started his entrepreneur career by setting up a manufacturing unit involved in manufacturing of empty medical capsules and later on diversified into real estate, finance, infrastructure, energy, logistics, pharma and mining sectors reaching beyond the leap and bounds. Mr. Tayal has been recognized as unparalleled excellence in the industry and helped Bharath Brand grow from Large to Larger in terms of business growth and achieving milestones one after another. During his career, Mr. Tayal has been instrumental in completing many residential & commercial projects, apart from acquiring over 1000 Acres of land to promote the real estate business.</p>
+                        </div>
+                    </div>
+                    <div class="section1">
+                        <div style="text-align:center;">
+                            <img src="images/k.png" alt="Chetan Prakash Tayal"/>
+                            <p>Mr. KRISHNA.P</p>
+                            <p>Construction Director</p>
+                        </div>
+                        <div class="text1">
+                            <p>Vrishti Ventures Pvt Ltd is an Integrated Infrastructure Company headquartered in Bangalore, India. The Promoters of Vrishti Ventures Pvt Ltd have got vast experience in executing numerous Infrastructure works, small and large size projects and expert in managing facilities including Civil, PHE, Interiors M & E works, etc.<br>
+                            We operate with Quality, Time, Cost & Safety. The company aims for growth year on year for revenues and profits. The company aims to contribute in a substantial way by providing quality construction and facility management to the construction sector.<br>
+                            We offer multiple services like Civil works, Interior works & facility management including Construction of Residential buildings, Villas, Industrial Buildings, PEB structures, Commercial Buildings, Interior fit-outs, Electrification, Fire fighting, Public Health Systems, Infrastructure works, Fabrication works and Urban Design works with Landscape, etc., We have a team of experts who handle Mechanization in construction like Modular formwork , Monolithic formwork and precast technology.</p>
+                        </div>
+                    </div>
+                    <div class="section1"><div style="text-align:center;">
+                            <img src="images/ba.png" hight="80px" width="80px" alt="Chetan Prakash Tayal"/>
+                            <p>Mr. Baba Khan</p>
+                            <p>Director</p>
+                        </div>
+                        <div class="text1">
+                            <p>Mr. Baba Khan has been associated with various companies for the last 30 years. His expertise lies in project execution of any magnitude — EHT, HT & LT. He is known for completing projects on time with a strong focus on quality and customer satisfaction. Mr. Khan ensures that NOLR delivers innovative, effective, and reliable solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Splecialized Services Section -->
+    <section class="py-20" id="sservices">
+        <div class="container mx-auto px-6" style="border: 4px solid;border-top-left-radius:80px;border-bottom-right-radius:80px;">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 mt-4" style="color: #f3ae54; font-family: 'Cinzel', serif;">Our Specialized Services</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+            <div style="width:100%;height:500px;display:flex;">
+                <!-- Left Side: Image Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:right;align-items:center;">
+                    <img src="images/ss1.png" alt="Interior Image" style="border-radius: 25px 0 0 25px;"/>
+                </div>
+
+                <!-- Right Side: Heading Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:center;align-items:center;">
+                    <h3 style="color: #122432; font-family: 'Cinzel', serif; font-size: 32px; letter-spacing: 3px;font-weight: extrabold;">
+                        Interior Works
+                    </h3>
+                </div>
+            </div>
+
+            <div style="width:100%;height:500px;display:flex;">
+                <!-- Right Side: Heading Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:center;align-items:center;">
+                    <h3 style="color: #122432; font-family: 'Cinzel', serif; font-size: 32px; letter-spacing: 3px;font-weight: extrabold;">
+                        HVAC AND CLEANROOM</h3>
+                </div>
+                <!-- Left Side: Image Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:center;align-items:center;">
+                    <img src="images/ss3.avif" alt="HVAC AND CLEANROOM" style="border-radius:0 25px 25px 0;" />
+                </div>
+            </div>
+
+            <div style="width:100%;height:500px;display:flex;">
+                <!-- Left Side: Image Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:right;align-items:center;">
+                    <img src="images/ss6.png" width="400px"alt="Interior Image" style="border-radius: 25px 0 0 25px;"/>
+                </div>
+
+                <!-- Right Side: Heading Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:center;align-items:center;">
+                    <h3 style="color: #122432; font-family: 'Cinzel', serif; font-size: 32px; letter-spacing: 3px;font-weight: extrabold;">
+                        Geo Technical Design & Build</h3>
+                </div>
+            </div>
+            <div style="width:100%;height:500px;display:flex;">
+                 <!-- Right Side: Heading Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:center;align-items:center;">
+                    <h3 style="color: #122432; font-family: 'Cinzel', serif; font-size: 32px; letter-spacing: 3px;font-weight: extrabold;">
+                        Precast & Post Tensioning</h3>
+                </div>
+
+                <!-- Left Side: Image Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:left;align-items:center;">
+                    <img src="images/ss4.png" width="400px" alt="Interior Image" style="border-radius:0 25px 25px 0;" />
+                </div>
+            </div>
+            <div style="width:100%;height:500px;display:flex;">
+                <!-- Left Side: Image Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:right;align-items:center;">
+                    <img src="images/ss5.avif" width="600px" height="auto" alt="SCREENS AND PANELS" style="border-radius: 25px 0 0 25px;"/>
+                </div>
+
+                <!-- Right Side: Heading Centered -->
+                <div style="width:50%;height:500px;display:flex;justify-content:center;align-items:center;">
+                    <h3 style="color: #122432; font-family: 'Cinzel', serif; font-size: 32px; letter-spacing: 3px; font-weight: 800;">
+                        SCREENS AND PANELS
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20" id="services">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" style="color: #f3ae54; font-family: 'Cinzel', serif;">Our Specialized Services</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">CONSTRUCTION</h3>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">ELECTRICAL WORKS</h3>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">PLUMBING</h3>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">HVAC</h3>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">ROADS & DRAINS</h3>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">PAINTING</h3>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">GLASS & ACP</h3>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">MAN POWER SUPPLY</h3>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">LANDSCAPING</h3>
+                </div>
+
+                <!-- Service 10 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">MATERIAL SUPPLY</h3>
+                </div>
+
+                <!-- Service 11 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-pallet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">FENCING</h3>
+                </div>
+
+                <!-- Service 12 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">INTERIORS</h3>
+                </div>
+
+                <!-- Service 13 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-biohazard"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">SEWAGE TREATMENT</h3>
+                </div>
+
+                <!-- Service 14 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">WATER PROOFING</h3>
+                </div>
+
+                <!-- Service 15 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">FABRICATION</h3>
+                </div>
+
+                <!-- Service 16 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">DOORS & WINDOWS</h3>
+                </div>
+
+                <!-- Service 17 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">ALUMINIUM & SS WORKS</h3>
+                </div>
+
+                <!-- Service 18 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">ARTS & MURALS</h3>
+                </div>
+
+                <!-- Service 19 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-grip-horizontal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">GRANITE, MARBLE & TILES</h3>
+                </div>
+
+                <!-- Service 20 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">ARCHITECTURE, DESIGN & BUILD</h3>
+                </div>
+
+                <!-- Service 21 -->
+                <div class="service-card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-head-side-mask"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">CLEANROOM</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20 bg-gray-100" id="projects">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" style="color: #f3ae54; font-family: 'Cinzel', serif;">Our Specialized Projects</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="images/a1.png" 
+                         alt="Commercial Building Project" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold mb-2">Residential Apartments</h3>
+                        <p class="mb-4">A modern residential complex featuring stylish homes, contemporary amenities, and a lifestyle rooted in comfort and sustainability.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="images/h1.png" 
+                         alt="Hospital Project" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold mb-2">Hospital/Pharma Ceutical</h3>
+                        <p class="mb-4">Cutting-edge healthcare and pharmaceutical facilities built with precision, hygiene, and regulatory excellence.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="images/commercial.png" 
+                         alt="Industrial Project" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold mb-2">Commercial</h3>
+                        <p class="mb-4">A modern commercial hub equipped with advanced manufacturing infrastructure for scalable, high-performance operations.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <img src="images/p1.png" 
+                         alt="Renovation Project" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold mb-2">Power</h3>
+                        <p class="mb-4">A precision-engineered power panel room designed for operational reliability, system safety, and seamless energy distribution.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <img src="images/i1.png" 
+                         alt="Landscape Project" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold mb-2">Industries</h3>
+                        <p class="mb-4">A next-generation industrial facility built for high-efficiency manufacturing, scalable operations, and robust infrastructure support.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <img src="images/s1.png" 
+                         alt="Mixed-Use Project" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold mb-2">Showrooms</h3>
+                        <p class="mb-4">Displaying the strength, precision, and beauty behind every build.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <section class="logo-section">
+        <div class="logo-container">
+            <div class="logo-track">
+                <!-- Duplicate these logos for continuous loop -->
+                <div class="logo-item">
+                    <img src="https://www.pngarts.com/files/1/HSBC-Logo-Transparent-Image.png" alt="Company A">
+                </div>
+                <div class="logo-item">
+                    <img src="https://logonoid.com/images/bpl-logo.png" alt="Company B">
+                </div>
+                <div class="logo-item">
+                    <img src="https://pluspng.com/img-png/logo-ibm-png-ibm-logo-png-4464.png" alt="Company C">
+                </div>
+                <div class="logo-item">
+                    <img src="images/CD.png" alt="Company D">
+                </div>
+                <div class="logo-item">
+                    <img src="images/CE.png" alt="Company E">
+                </div>
+                <div class="logo-item">
+                    <img src="images/CF.png" alt="Company F">
+                </div>
+                <div class="logo-item">
+                    <img src="images/CG.png" alt="Company G">
+                </div>
+                <div class="logo-item">
+                    <img src="images/CH.png" alt="Company H">
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.pngmart.com/files/10/Audi-Logo-PNG-Photos.png" alt="Company I">
+                </div>
+                <div class="logo-item">
+                    <img src="images/CJ.png" alt="Company J">
+                </div>
+                <!-- Duplicate them again for seamless looping -->
+                <div class="logo-item">
+                    <img src="images/CAA.png" alt="Company A">
+                </div>
+                <div class="logo-item">
+                    <img src="images/CBB.png" alt="Company B">
+                </div>
+                <div class="logo-item">
+                    <img src="https://iconape.com/wp-content/png_logo_vector/kptcl-logo.png" alt="Company C">
+                </div>
+                <div class="logo-item">
+                    <img src="https://3.imimg.com/data3/PQ/NN/MY-7628041/sai-tech-it-private-limited-logo.png" alt="Company D">
+                </div>
+                <div class="logo-item">
+                    <img src="https://socialpanga.com/wp-content/uploads/2021/07/Sparsh-Hospital-1.png" alt="Company E">
+                </div>
+                <div class="logo-item">
+                    <img src="https://image3.mouthshut.com/images/imagesp/925597855s.png" alt="Company F">
+                </div>
+                <div class="logo-item">
+                    <img src="https://3.imimg.com/data3/KS/GD/MY-85258/mysore-fruit-products-limited-logo.png" alt="Company G">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Optional: Second row going the opposite direction -->
+        <div class="logo-container" style="margin-top: 20px;">
+            <div class="logo-track reverse">
+                <div class="logo-item">
+                    <img src="images/C1.png" alt="Partner 1">
+                </div>
+                <div class="logo-item">
+                    <img src="https://biocomcro.org/wp-content/uploads/2017/09/Advinus_logo-300x205.png" alt="Partner 2">
+                </div>
+                <div class="logo-item">
+                    <img src="images/C3.png" alt="Partner 3">
+                </div>
+                <div class="logo-item">
+                    <img src="https://iconape.com/wp-content/files/el/259850/png/259850.png" alt="Partner 4">
+                </div>
+                <div class="logo-item">
+                    <img src="images/C5.png" alt="Partner 5">
+                </div>
+                <div class="logo-item">
+                    <img src="https://seeklogo.com/images/D/DLF-logo-7E2CBA06DC-seeklogo.com.png" alt="Partner 6">
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.joonsquare.com/usermanage/image/business/phoenix-marketcity-bengaluru-rural-49459/phoenix-marketcity-bengaluru-rural-logo.png" alt="Partner 7">
+                </div>
+                <div class="logo-item">
+                    <img src="https://newprojects.99acres.com/projects/akme_project/akme_ballet/logo_2.jpg" alt="Partner 8">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/09/hindustan-unilever-limited-logo.png" alt="Partner 9">
+                </div>
+                <div class="logo-item">
+                    <img src="https://th.bing.com/th/id/OIP.-evMBQNDa80NGUBI34KSDgHaCU?rs=1&pid=ImgDetMain" alt="Partner 10">
+                </div>
+                <!-- Duplicates -->
+                <div class="logo-item">
+                    <img src="images/C1.png" alt="Partner 1">
+                </div>
+                <div class="logo-item">
+                    <img src="https://biocomcro.org/wp-content/uploads/2017/09/Advinus_logo-300x205.png" alt="Partner 2">
+                </div>
+                <div class="logo-item">
+                    <img src="images/C3.png" alt="Partner 3">
+                </div>
+                <div class="logo-item">
+                    <img src="https://iconape.com/wp-content/files/el/259850/png/259850.png" alt="Partner 4">
+                </div>
+                <div class="logo-item">
+                    <img src="https://iconape.com/wp-content/png_logo_vector/tejas-networks-logo.png" alt="Partner 5">
+                </div>
+                <div class="logo-item">
+                    <img src="https://seeklogo.com/images/D/DLF-logo-7E2CBA06DC-seeklogo.com.png" alt="Partner 6">
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.joonsquare.com/usermanage/image/business/phoenix-marketcity-bengaluru-rural-49459/phoenix-marketcity-bengaluru-rural-logo.png" alt="Partner 7">
+                </div>
+                <div class="logo-item">
+                    <img src="https://newprojects.99acres.com/projects/akme_project/akme_ballet/logo_2.jpg" alt="Partner 8">
+                </div>
+                <div class="logo-item">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+9" alt="Partner 9">
+                </div>
+                <div class="logo-item">
+                    <img src="https://th.bing.com/th/id/OIP.-evMBQNDa80NGUBI34KSDgHaCU?rs=1&pid=ImgDetMain" alt="Partner 10">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" style="background: linear-gradient(to right,#122432,#11394a);">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <div class="logo text-white mb-4">
+                        <img src="images/logos.PNG" height="80px" width="200" style="margin-bottom: 10px;">
+                    </div>
+                    <p class="text-gray-400">
+                        Building landmarks that stand the test of time with quality craftsmanship and innovative solutions.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#services">Services</a>
+                        <a href="#sservices">Splecialized Services</a>
+                        <a href="#projects">Projects</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Contact Informetion</h4>
+                    <div class="contact-info">
+                        <div class="contact-icon" style="width:24px">
+                            <a href="https://www.google.com/maps/place/BHARATH+GROUP+OF+COMPANIES/@12.9683132,77.5996161,1106m/data=!3m3!1e3!4b1!5s0x3bae167f4caea237:0x565e20cfc6fba341!4m6!3m5!1s0x3bae167f4d65553b:0x9a4289d98bf07bd5!8m2!3d12.968308!4d77.602191!16s%2Fg%2F11f1p3rwd6?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" class="fas fa-map-marker-alt ml-6"></a>
+                        </div>
+                        <div class="ml-6">
+                            <h4 class="font-bold">Address</h4>
+                            <p>300, 3rd Floor, Gold Tower 50, Residency Road, Bangalore-560025</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Phone</h4>
+                            <p>+91 9845033901</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <a href="mailto:info@nclrbharath.com" class="fas fa-envelope"></a>
+                        </div>
+                        <div style="width:20px">
+                            <h4 class="font-bold">Email</h4>
+                            <p>info@nclrbharath.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div>
+                <h4 class="text-white text-lg font-bold mb-4">Follow Us</h4>
+                 <div class="flex">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div> -->
+            <div class="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-center items-center">
+                <p class="text-gray-400 mb-4 md:mb-0" style="text-align: center;">
+                    &copy; 2023 NCLR Construction. All Rights Reserved. Managed by <a style=" color: #f3ae54;" href="https://www.avaio.in">AVAIO Ads</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-yellow-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 hover:bg-yellow-600 shadow-lg">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            if (!this.checkValidity()) {
+                e.preventDefault();
+                alert('Please fill all required fields!');
+            }
+        });
+    </script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this)
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('form-message').textContent = data;
+                document.getElementById('form-message').classList.remove('hidden');
+            });
+        });
+    </script>
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('flex');
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fadeInUp');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const intervalTime = 3000; // 3 seconds
+        // Initialize the slideshow
+        function startSlideShow() {
+            setInterval(nextSlide, intervalTime);
+        }
+        // Next slide function
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        // Start the slideshow
+        startSlideShow();
+    </script>
+    <script>
+        let currentIndex = 0;
+        const track = document.getElementById('carousel-track');
+        const totalSections = document.querySelectorAll('.section1').length;
+
+        function moveCarousel() {
+            currentIndex = (currentIndex + 1) % totalSections;
+            const offset = -currentIndex * 100;
+            track.style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(moveCarousel, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <meta name="description" content="NCLR Construction - Building landmarks that stand the test of time">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS */
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #f8a51b;
+            --dark: #333;
+            --light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to right,#122432,#11394a);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        
+        .header-scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }      
+     
+        /* Contact */
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon:hover {
+            color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #bbb;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        .hover\:text-custom-yellow:hover {
+            color: #fcb975;
+        }
+        
+        .containers h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.0rem;
+            font-weight: 600;
+        }
+        
+        .containers p {
+            font-size: 1rem;
+            padding-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <img src="images/logos.PNG" height="80px" width="200" style="margin-bottom: 10px;">
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html" class="font-medium hover:text-custom-yellow transition">Home</a></li>
+                        <li><a href="contact.html" class="font-medium hover:text-custom-yellow transition">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="px-auto py-28" id="contact" style="background-color:rgb(232, 232, 232)">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <h1 style="font-family: 'Cinzel', serif; font-size: 2.0rem; font-weight: 600;">Main Office</h1>
+                    <p style="font-size: 1rem; padding-left:2rem;">Contact us by phone or mail during business hours.</p>
+                </div>
+            </div>
+            <div style="display:flex">
+                <div style="width: 350px;">
+                    <h1 style="font-family: 'Cinzel', serif; font-size: 2.0rem; font-weight: 600;">Address</h1>
+                    <p style="font-size: 1rem; padding-left:2rem;">688, 2nd Floor, 6th Main Rd, 3rd Block, BEL Layout, Vidyaranyapura, Bengaluru, Karnataka 560097</p>
+                </div>
+                <div>
+                    <h1 style="font-family: 'Cinzel', serif; font-size: 2.0rem; font-weight: 600;">Office Hours</h1>
+                    <p style="font-size: 1rem; padding-left:2rem;">Monday-Saturday:</p>
+                    <p style="font-size: 1rem; padding-left:2rem;">9AM-6PM</p>
+                </div>
+            </div>
+            <div class="mt-4" style="display:flex">
+                <div style="width: 350px;">
+                    <h1 style="font-family: 'Cinzel', serif; font-size: 2.0rem; font-weight: 600;">Email</h1>
+                    <p style="font-size: 1rem; padding-left:2rem;">info@nclrbharath.com</p>
+                </div>
+                <div>
+                    <h1 style="font-family: 'Cinzel', serif; font-size: 2.0rem; font-weight: 600;">Phone</h1>
+                    <p style="font-size: 1rem; padding-left:2rem;">+91 9845033901</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 mt-3">
+            <div style="display: flex; justify-content: flex-end; border: none; margin: 0;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0553006517885!2d77.59961607358893!3d12.968313214953316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae167f4d65553b%3A0x9a4289d98bf07bd5!2sBHARATH%20GROUP%20OF%20COMPANIES!5e0!3m2!1sen!2sin!4v1751262641333!5m2!1sen!2sin" 
+                width="700" 
+                height="450" 
+                style="border:0; border-radius:10px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" style="background: linear-gradient(to right,#122432,#11394a);">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <div class="logo text-white mb-4">
+                        <img src="images/logos.PNG" height="80px" width="200" style="margin-bottom: 10px;">
+                    </div>
+                    <p class="text-gray-400">
+                        Building landmarks that stand the test of time with quality craftsmanship and innovative solutions.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#about">About Us</a>
+                        <a href="index.html#services">Services</a>
+                        <a href="index.html#sservices">Splecialized Services</a>
+                        <a href="index.html#projects">Projects</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-icon" style="width:24px">
+                            <a href="https://www.google.com/maps/place/BHARATH+GROUP+OF+COMPANIES/@12.9683132,77.5996161,1106m/data=!3m3!1e3!4b1!5s0x3bae167f4caea237:0x565e20cfc6fba341!4m6!3m5!1s0x3bae167f4d65553b:0x9a4289d98bf07bd5!8m2!3d12.968308!4d77.602191!16s%2Fg%2F11f1p3rwd6?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" class="fas fa-map-marker-alt ml-6"></a>
+                        </div>
+                        <div class="ml-6">
+                            <h4 class="font-bold">Address</h4>
+                            <p>300, 3rd Floor, Gold Tower 50, Residency Road, Bangalore-560025</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Phone</h4>
+                            <p>+91 9845033901</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <a href="mailto:info@nclrbharath.com" class="fas fa-envelope"></a>
+                        </div>
+                        <div style="width:20px">
+                            <h4 class="font-bold">Email</h4>
+                            <p>info@nclrbharath.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-center items-center">
+                <p class="text-gray-400 mb-4 md:mb-0" style="text-align: center;">
+                    &copy; 2023 NCLR Construction. All Rights Reserved. Managed by <a style=" color: #f3ae54;" href="https://www.avaio.in">AVAIO</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-yellow-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 hover:bg-yellow-600 shadow-lg">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('flex');
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fadeInUp');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
